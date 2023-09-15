@@ -1,0 +1,6 @@
+2023-09-15 14:09:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DOCTOR" not found (this database is empty); SQL statement:
+select d1_0.id,d1_0.last_name,d1_0.cpf,d1_0.crm,d1_0.email,d1_0.first_name,d1_0.password,d1_0.specialty from doctor d1_0 where d1_0.email=? [42104-214]
+2023-09-15 14:17:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DOCTOR" not found (this database is empty); SQL statement:
+select d1_0.id,d1_0.last_name,d1_0.cpf,d1_0.crm,d1_0.email,d1_0.first_name,d1_0.password,d1_0.specialty from doctor d1_0 where d1_0.email=? [42104-214]
