@@ -49,4 +49,8 @@ public class AdminService {
         return adminRepository.save(existingAdmin);
     }
 
+    public void deleteAdmin(Long id){
+        adminRepository.deleteById(id);
+    }
+
 }
