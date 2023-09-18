@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.testemedical.testemedical.domain.entities.DoctorEntity;
 
 @Repository
-// @Table(name = "doctors")
 public interface DoctorRepository extends JpaRepository<DoctorEntity, Long> {
 
     DoctorEntity findByEmail(String email);

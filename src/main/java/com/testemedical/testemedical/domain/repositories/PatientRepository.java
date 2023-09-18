@@ -8,4 +8,8 @@ import com.testemedical.testemedical.domain.entities.PatientEntity;
 @Repository
 public interface PatientRepository extends JpaRepository<PatientEntity, Long> {
 
+    PatientEntity findByEmail(String email);
+
+    PatientEntity findByCpf(String cpf);
+
 }

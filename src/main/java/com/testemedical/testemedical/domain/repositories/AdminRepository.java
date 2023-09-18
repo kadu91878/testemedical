@@ -8,4 +8,10 @@ import com.testemedical.testemedical.domain.entities.AdminEntity;
 @Repository
 public interface AdminRepository extends JpaRepository<AdminEntity, Long> {
 
+    AdminEntity findByEmail(String email);
+
+    AdminEntity findByCpf(String cpf);
+
+
+
 }
