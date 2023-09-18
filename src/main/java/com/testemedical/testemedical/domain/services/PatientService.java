@@ -16,11 +16,15 @@ public class PatientService {
     }
 
     public PatientEntity createPatient(PatientEntity patient) throws Exception {
-        if (patient.getEmail() != null) {
+        PatientEntity existingPatientWithEmail = patientRepository.findByEmail(patient.getEmail());
+        if (existingPatientWithEmail != null) {
             throw new Exception("Email já cadastrado");
         }
 
-        if (patient.getCpf() != null) {
+        PatientEntity existingPatientWithCpf = patientRepository.findByCpf(patient.getCpf());
+
+
+        if (existingPatientWithCpf != null) {
             throw new Exception("CPF já cadastrado");
         }
         return patientRepository.save(patient);

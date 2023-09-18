@@ -16,11 +16,14 @@ public class AdminService {
     }
 
     public AdminEntity createAdmin(AdminEntity admin) throws Exception {
-        if (admin.getEmail() != null) {
+        AdminEntity exitingAdminWithEmail = adminRepository.findByEmail(admin.getEmail());
+        if (exitingAdminWithEmail != null) {
             throw new Exception("Email já cadastrado");
         }
 
-        if (admin.getCpf() != null) {
+        AdminEntity existingAdminWithCpf = adminRepository.findByCpf(admin.getCpf());
+
+        if (existingAdminWithCpf != null) {
             throw new Exception("CPF já cadastrado");
         }
         return adminRepository.save(admin);
@@ -49,7 +52,7 @@ public class AdminService {
         return adminRepository.save(existingAdmin);
     }
 
-    public void deleteAdmin(Long id){
+    public void deleteAdmin(Long id) {
         adminRepository.deleteById(id);
     }
 
